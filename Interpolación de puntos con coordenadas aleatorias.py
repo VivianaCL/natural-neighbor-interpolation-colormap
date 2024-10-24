@@ -25,7 +25,7 @@ def voronoi_finite_polygons_2d(vor, radius=None):
 
     center = vor.points.mean(axis=0)
     if radius is None:
-        radius = vor.points.ptp().max()
+        radius = np.ptp(vor.points, axis=0).max()
 
     # Diccionario de aristas para tomando como clave cada punto
     all_ridges = {}
